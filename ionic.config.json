@@ -1,0 +1,7 @@
+{
+  "name": "dogsi-market-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

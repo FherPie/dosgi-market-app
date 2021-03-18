@@ -1,0 +1,181 @@
+<ion-header>
+  <ion-toolbar mode="ios">
+    <ion-title>
+      Factura Nueva
+    </ion-title>
+      <ion-buttons  slot="end">
+          <ion-button fill="outline" (click)="close()"><ion-icon name="close"></ion-icon></ion-button>
+        </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Numero Factura  00002122</ion-label>
+        </ion-item>
+      <ion-item>
+        <ion-label floating>Cliente:</ion-label>
+        <ion-input type="text" [(ngModel)]="title"></ion-input>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-label floating>Agregar Producto:</ion-label>
+        <ion-input type="text" [(ngModel)]="description"></ion-input>
+      </ion-item> -->
+    </ion-list>
+    <ion-toolbar mode="ios">
+        <ion-buttons  slot="start" >
+            <ion-grid>
+                <ion-row>
+                  <ion-col>
+            <ion-button color="secondary" size="small" fill="outline" (click)="agregarCliente()"><ion-icon name="cart"></ion-icon>
+              Nuevo Cliente</ion-button>
+            </ion-col>
+            <ion-col>
+    <ion-button color="secondary" size="small"  fill="outline" (click)="agregarProducto()"><ion-icon name="cart"></ion-icon>
+      Productos</ion-button>
+    </ion-col>
+  <ion-col>
+    <ion-button color="secondary" size="small" fill="outline" (click)="saveItem()"><ion-icon name="barcode"></ion-icon>
+      Escanear Producto</ion-button>
+    </ion-col>
+  <ion-col>
+    <ion-button color="primary" size="small"  fill="outline" (click)="saveItem()"><ion-icon name="save"></ion-icon>Guardar</ion-button>
+  </ion-col>
+</ion-row>
+</ion-grid>
+  </ion-buttons>
+</ion-toolbar>
+
+
+
+<ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-label>Productos</ion-label>
+  <!-- Checkboxes in a List -->
+  <ion-list>
+      <ion-item [ngClass]="(i % 2 == 0)? 'odd' : 'even'"  *ngFor="let item of items; let i = index;">
+    <ion-button  [ngClass]="no-margin" expand="full" >
+        <ion-icon   name="add-circle" slot="icon-only"></ion-icon>
+   </ion-button>
+  <ion-button   [ngClass]="no-margin" expand="full" >
+          <ion-icon name="remove-circle" slot="icon-only"></ion-icon>
+   </ion-button>
+   <ion-button [ngClass]="no-margin"color="danger" >
+      <ion-icon  name="trash" slot="end"  slot="icon-only"></ion-icon>
+    </ion-button>
+      <ion-label>{{item?.title}}</ion-label>
+  </ion-item>
+</ion-list>
+
+      </ion-col>
+      <ion-col>
+          <ion-label>Cantidad</ion-label>
+      <ion-list>
+          <ion-item [ngClass]="(i % 2 == 0)? 'odd' : 'even'"  *ngFor="let item of items; let i = index;">
+              <ion-label>{{i}}</ion-label>
+          </ion-item>
+      </ion-list>
+              
+      </ion-col>
+      <ion-col>
+          <ion-label>Precio</ion-label>
+      <ion-list>
+          <ion-item [ngClass]="(i % 2 == 0)? 'odd' : 'even'"  *ngFor="let item of items; let i = index;">
+              <ion-label>{{i*2}}</ion-label>
+          </ion-item>
+      </ion-list>
+              
+      </ion-col>
+      <ion-col>
+          <ion-label>Total</ion-label>
+      <ion-list>
+          <ion-item [ngClass]="(i % 2 == 0)? 'odd' : 'even'"  *ngFor="let item of items; let i = index;">
+              <ion-label>{{i*3}}</ion-label>
+          </ion-item>
+      </ion-list>
+              
+      </ion-col>
+    </ion-row>
+    
+  </ion-grid>
+
+  <ion-grid>
+      <ion-row>
+        <ion-col size="10">
+    <!-- Checkboxes in a List -->
+    <ion-list>
+        <ion-item>
+        <ion-label>SUBTOTAL</ion-label>
+    </ion-item>
+  </ion-list>
+  
+        </ion-col>
+     
+        <ion-col>
+           
+        <ion-list>
+            <ion-item >
+                <ion-label>20.0</ion-label>
+            </ion-item>
+        </ion-list>
+                
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col size="10">
+      <!-- Checkboxes in a List -->
+      <ion-list>
+          <ion-item>
+          <ion-label>IMPUESTOS</ion-label>
+      </ion-item>
+    </ion-list>
+    
+          </ion-col>
+       
+          <ion-col>
+             
+          <ion-list>
+              <ion-item >
+                  <ion-label>20.0</ion-label>
+              </ion-item>
+          </ion-list>
+                  
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+            <ion-col size="10">
+        <!-- Checkboxes in a List -->
+        <ion-list>
+            <ion-item>
+            <ion-label>TOTAL:</ion-label>
+        </ion-item>
+      </ion-list>
+      
+            </ion-col>
+         
+            <ion-col>
+               
+            <ion-list>
+                <ion-item >
+                    <ion-label>20.0</ion-label>
+                </ion-item>
+            </ion-list>
+                    
+            </ion-col>
+          </ion-row>
+      
+    </ion-grid>
+
+
+
+</ion-content>
+<ion-footer>
+    <ion-toolbar mode="ios">
+          <ion-buttons  slot="end">
+              <ion-button color="secondary" color="danger" fill="solid" (click)="agregarCobro()"><ion-icon name="arrow-forward" slot="end"></ion-icon>Escojer Forma de Pago</ion-button>
+            </ion-buttons>
+      </ion-toolbar>
+  </ion-footer>

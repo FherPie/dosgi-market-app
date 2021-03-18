@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar color="primary" mode="ios">
+        <ion-buttons slot="start" >
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+      <ion-title>
+        Facturas
+      </ion-title>
+      <ion-buttons slot="end" >
+          <ion-button color="light" fill="solid" (click)="addItem()" end><ion-icon name="add-circle"></ion-icon>Nueva</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+
+     <!-- <ion-item > -->
+       <app-info-factura-linea *ngFor="let item of items"
+       (click)="viewItem(item)" [infoFactura]="item"></app-info-factura-linea>
+      <!-- </ion-item> -->
+
+
+      <!-- <ion-item *ngFor="let item of items"
+       (click)="viewItem(item)">
+       <app-info-factura-linea [infoFactura]="item"></app-info-factura-linea>
+      </ion-item> -->
+    </ion-list>
+  </ion-content>
+
+  

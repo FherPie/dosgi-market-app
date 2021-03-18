@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar class="new-background-color" mode="ios">
+    <ion-title>
+      POS DOGSI-Punto de Venta
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>  
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+              <ion-button expand="full"  size="large"  (click)="irA('todo')">
+                  <ion-icon slot="start" name="cart"></ion-icon>
+                  VENTAS
+              </ion-button>
+          </ion-col>
+          <ion-col>
+              <ion-button expand="full" size="large" (click)="irA('caja')">
+                  <ion-icon slot="start" name="star"></ion-icon>
+                  CAJA
+              </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-button  expand="full"  size="large">
+                    <ion-icon slot="start" name="star"></ion-icon>
+                    INVENTARIO
+                </ion-button>
+            </ion-col>
+            <ion-col>
+                <ion-button expand="full" size="large">
+                    <ion-icon slot="start" name="star"></ion-icon>
+                    CLIENTES
+                </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <ion-button expand="full" size="large">
+                      <ion-icon slot="start" name="star"></ion-icon>
+                      SINCRONIZACION
+                  </ion-button>              
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                  <ion-button expand="full" size="large"  (click)="cerrarSesion()">
+                      <ion-icon slot="start" name="star"></ion-icon>
+                      Cerrar Sesion
+                  </ion-button>              
+              </ion-col>
+            </ion-row>
+      </ion-grid>
+  <!--div class="ion-padding">
+    The world is your oyster.Holly shit
+    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  </div>
+  <ion-list>
+    <ion-item *ngFor="let post of posts">
+      <img [src]="post.data.url" />
+    </ion-item>
+  </ion-list>-->
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar  class="new-background-color">
+      <ion-title>Developed by Kreafast</ion-title>
+    </ion-toolbar>
+ </ion-footer>

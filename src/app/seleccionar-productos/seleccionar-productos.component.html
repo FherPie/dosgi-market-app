@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-toolbar class="new-background-color" mode="ios">
+      <ion-title>
+        Productos
+      </ion-title>
+      <ion-buttons  slot="end">
+          <ion-button fill="outline" (click)="close()"><ion-icon name="close"></ion-icon></ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>  
+<form  (submit)="enviarTags(newTag)" >
+    <input type="text"  #newTag/>
+   <button>Ingresar Datos</button>
+</form>
+
+
+<ul>
+<li *ngIf="activated">Esto esta activado!!</li>
+<li *ngIf="!activated">No esta esto activado!!</li>
+
+<li *ngFor="let tag of tags">
+    {{tag}}  <a  (click)="borrarTag(tag)">x</a>
+</li>
+
+
+</ul>
+
+
+<form>
+  <input type="text" name="name"  [(ngModel)]="name" />
+  <input type="text" name="age"  [(ngModel)]="age" />
+</form>
+<ul>
+  <li>
+    {{name}}
+  </li>
+  <li>
+      {{age}}
+    </li>
+</ul>
+
+
+      <ion-grid>
+          <ion-row>
+            <ion-col>
+        <!-- Checkboxes in a List -->
+<ion-list>
+    <ion-item *ngFor="let entry of categorias">
+      <ion-label>{{entry.val}}</ion-label>
+      <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+            </ion-col>
+            <ion-col>
+               <ion-button *ngFor="let entry of productos" fill="solid" expand="full"  size="large" (click)="selectProducto()">{{entry.codigo}}<br/>{{entry.nombre}}</ion-button>
+            </ion-col>
+          </ion-row>
+          
+        </ion-grid>
+
+  </ion-content>
+  
